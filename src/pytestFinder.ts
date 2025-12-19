@@ -65,13 +65,13 @@ export function findPytestTests(document: vscode.TextDocument): PytestTest[] {
 
 /**
  * Gets the test identifier for running pytest
- * Format: file::class::test or file::test
+ * Format: file.py::class::test or file.py::test
  */
 export function getTestIdentifier(test: PytestTest): string {
 	const fileName = test.filePath;
 	const relativePath = vscode.workspace.asRelativePath(fileName);
-	const pathWithoutExt = relativePath.replace(/\.py$/, '');
-	const pathWithSlashes = pathWithoutExt.replace(/\\/g, '/');
+	// Keep the .py extension - pytest requires it in the identifier
+	const pathWithSlashes = relativePath.replace(/\\/g, '/');
 	
 	if (test.className) {
 		return `${pathWithSlashes}::${test.className}::${test.name}`;
