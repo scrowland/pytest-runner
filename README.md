@@ -2,7 +2,9 @@
 
 A VS Code extension that automatically finds pytest tests in your Python project and adds run buttons above each test function.
 
-Very basic for now, just allows quick running of tests with esoteric execution environments.
+Very basic for now, just allows quick running of tests with esoteric execution environments. It just passes a command of your \
+choosing to the terminal and executes it. No bells and whistles, runs a single test only, but you can use any command line you \
+want to run the tests, uv, pyenv, pytest, docker or anything really as long as it runs from the terminal.
 
 ## Features
 
