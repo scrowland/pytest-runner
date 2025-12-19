@@ -20,9 +20,13 @@ Very basic for now, just allows quick running of tests with esoteric execution e
 3. Click the button to run that specific test
 4. The test will execute in the "Platform Test Runner" terminal
 
-## Requirements
+## Local Installation
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+```shell
+pnpm install
+pnpm run package-extension
+cursor --install-extension platform-test-runner-0.0.1.vsix
+```
 
 ## Extension Settings
 
@@ -40,6 +44,8 @@ You can customize the command using the following placeholders:
 - `{className}`: Test class name (empty if test is not in a class)
 
 ### Example Configurations
+
+Open your settings and search for pytest runner, then you can add a custom command:
 
 **Default (simple pytest):**
 ```json
