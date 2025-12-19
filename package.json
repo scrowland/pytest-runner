@@ -16,11 +16,22 @@
   "contributes": {
     "commands": [
       {
-        "command": "platform-test-runner.helloWorld",
-        "title": "Hello World",
+        "command": "platform-test-runner.runTest",
+        "title": "Run Test",
         "category": "Platform Test Runner"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Platform Test Runner",
+      "properties": {
+        "platform-test-runner.commandTemplate": {
+          "type": "string",
+          "default": "pytest {testIdentifier}",
+          "description": "Command template to run pytest tests. Available placeholders: {testIdentifier}, {testName}, {filePath}, {className}",
+          "markdownDescription": "Command template to run pytest tests. Available placeholders:\n- `{testIdentifier}`: Full test identifier (e.g., `tests/test_example.py::TestClass::test_function`)\n- `{testName}`: Test function name (e.g., `test_function`)\n- `{filePath}`: Full file path\n- `{className}`: Test class name (if applicable)"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
