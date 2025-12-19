@@ -16,10 +16,13 @@ export function activate(context: vscode.ExtensionContext) {
 	const disposable = vscode.commands.registerCommand('platform-test-runner.helloWorld', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
+		console.log('Hello World command executed!');
 		vscode.window.showInformationMessage('Hello World from Platform Test Runner!');
 	});
 
 	context.subscriptions.push(disposable);
+	
+	console.log('Hello World command registered successfully');
 }
 
 // This method is called when your extension is deactivated
